@@ -3,18 +3,20 @@
 <!-- Blog Entries Column -->
 <div class="col-md-8">
 
+  {% for entry in blog_entries %}
   <!-- Blog Post -->
   <div class="card mb-4 mt-4">
     <div class="card-body">
-      <h2 class="card-title">Post Title</h2>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+      <h3 class="card-title">{{entry.entry_title}}</h3>
+      <p class="card-text">{{entry.entry_text}}</p><!-- |truncatechars:100 -->
       <a href="#" class="btn btn-primary btn-sm">Read More &rarr;</a>
     </div>
     <div class="card-footer text-muted">
-      Posted on January 1, 2017 by
-      <span class= "text-info mr-2">Start Bootstrap</span>
+      {{entry.entry_date}}
+      <span class= "text-info mr-2">{{entry.entry_author}}</span>
     </div>
   </div>
+  {% endfor %}
 
   <!-- Pagination -->
   <ul class="pagination justify-content-center mb-4">

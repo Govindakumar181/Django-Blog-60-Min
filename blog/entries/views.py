@@ -5,4 +5,5 @@ from .models import Entry
 # Create your views here.
 
 def home(request):
-    return render(request, 'entries/index.html')
+    context_object_name = Entry.objects.all()
+    return render(request, 'entries/index.html',{"blog_entries":context_object_name})
